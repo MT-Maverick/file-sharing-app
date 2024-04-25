@@ -19,7 +19,7 @@ public class PostDataService {
         
         fileData.setTopic(file.getOriginalFilename());
        
-        Date date = new Date();
+        public Date date = new Date();
         fileData.setDate(date);
         
         String data = new String(file.getBytes(),StandardCharsets.UTF_8);   
