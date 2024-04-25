@@ -1,5 +1,5 @@
 package com.enviro.assessment.grad001.mfundosindane.filesharingapp.service;
-
+import java.util.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +19,8 @@ public class PostDataService {
         
         fileData.setTopic(file.getOriginalFilename());
        
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
-        LocalDateTime now = LocalDateTime.now(); 
-        fileData.setDate(dtf.format(now))
+        Date date = new Date();
+        fileData.setDate(date);
         
         String data = new String(file.getBytes(),StandardCharsets.UTF_8);   
         fileData.setData(data);
