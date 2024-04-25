@@ -7,6 +7,7 @@ package com.enviro.assessment.grad001.mfundosindane.filesharingapp.model;
 */
 
 //imported libraries: 
+import java.util.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,7 +26,7 @@ public class FileModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
-    LocalDateTime date;
+    private Date date;
     
     private String file_name;
     
@@ -63,7 +64,7 @@ public class FileModel {
     }
 
     //set method for date
-    public LocalDateTime setDate(){
+    public Date setDate(){
         this.date=date;
     }
 
