@@ -16,10 +16,16 @@ public class PostDataService {
 
     public void saveFile(MultipartFile file)throws IOException{
         FileModel fileData = new FileModel();
+        
         fileData.setTopic(file.getOriginalFilename());
-
-        String data = new String(file.getBytes(),StandardCharsets.UTF_8);
+       
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        LocalDateTime now = LocalDateTime.now(); 
+        fileData.setDate(dtf.format(now))
+        
+        String data = new String(file.getBytes(),StandardCharsets.UTF_8);   
         fileData.setData(data);
+       
         fileRepository.save(fileData);
     }
 }
