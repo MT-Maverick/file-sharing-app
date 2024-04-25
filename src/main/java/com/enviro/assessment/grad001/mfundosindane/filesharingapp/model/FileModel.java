@@ -25,6 +25,8 @@ public class FileModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
+    LocalDateTime date;
+    
     private String file_name;
     
     @Lob
@@ -45,6 +47,11 @@ public class FileModel {
         return this.data;
     }
 
+    //get method for date
+    public void getDate(){
+        return this.date;
+    }
+
     //set method for file_name
     public void setfile_name(String file_name){
         this.file_name=file_name;
@@ -53,6 +60,11 @@ public class FileModel {
     //set method for file data
     public void setData(String data){
         this.data=data;
+    }
+
+    //set method for date
+    public LocalDateTime setDate(){
+        this.date=date;
     }
 
 }
