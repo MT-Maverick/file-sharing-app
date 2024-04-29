@@ -1,5 +1,4 @@
 package com.enviro.assessment.grad001.mfundosindane.filesharingapp.model;
-
 /*Name: FileModel
  * 
  * Purpose: To create a class object for the file content uploaded and retrieved
@@ -7,7 +6,6 @@ package com.enviro.assessment.grad001.mfundosindane.filesharingapp.model;
 */
 
 //imported libraries: 
-import java.util.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,12 +24,13 @@ public class FileModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
-    private Date date;
-    
-    private String file_name;
     
     @Lob
     private String data;
+    
+    private String file_name;
+
+    private String date_made;
 
     //get method for id
     public Integer getID(){
@@ -48,9 +47,8 @@ public class FileModel {
         return this.data;
     }
 
-    //get method for date
-    public void getDate(){
-        return this.date;
+    public String getDate(){
+        return this.date_made;
     }
 
     //set method for file_name
@@ -63,9 +61,10 @@ public class FileModel {
         this.data=data;
     }
 
-    //set method for date
-    public Date setDate(){
-        this.date=date;
-    }
+
+    //set method for file_name
+    public void setDate(String date){
+        this.date_made=date;
+    }    
 
 }
