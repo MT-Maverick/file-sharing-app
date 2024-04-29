@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select the text to upload</title>
+    <title>Welcome to My Spring Boot App</title>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    
-    <h2>Upload a File</h2>
+    <center>
+
+        <h2>Upload a File</h2>
+
     <form action="index" method="post" enctype="multipart/form-data">
-        <input type="file" name="file"  accept=".txt">
+        
+        <p>Drag and drop a file here, or click to select a file</p>
+        <div id="drop-area">
+            <p id="browse-text">click here to select a file</p>
+            <input type="file" id="file" name="file"  accept=".txt" style="display: none;">
+        </div>
         <button type="submit">Upload</button>
     </form>
-    
+</center>
+
+<script src="script.js"></script>
 </body>
 </html>
+  
