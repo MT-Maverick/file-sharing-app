@@ -1,5 +1,7 @@
 package com.enviro.assessment.grad001.mfundosindane.filesharingapp.controller;
 
+import java.net.URI;
+
 /*Name:AppController:
  * 
  *Purpose: To facilitate RESTful endpoints GET and POST for the Application.
@@ -37,13 +39,16 @@ public class AppController {
     //POST method used to upload text file: 
     @PostMapping("/index")
     public ResponseEntity<String> uploadFile(@RequestPart("file")MultipartFile file)
+
     {
+        
         if(file.isEmpty())
-        return ResponseEntity.badRequest().body("File is empty");
+        return ResponseEntity.badRequest().body("<center>File is empty</br>Click on the back button to return to home</center>");
         
         try {
+
             PDS.saveFile(file);
-            return ResponseEntity.ok("File "+file.getOriginalFilename()+" Uploaded");
+            return ResponseEntity.ok("<center>File: "+file.getOriginalFilename()+"</br>SUCESSFULY UPLOADED!!</br><a href=\"index.html\">Click here to return to home</a></center>");
         } catch (Exception e) {
          return ResponseEntity.badRequest().body("Failed to load file" + e.getMessage() );   
         }
